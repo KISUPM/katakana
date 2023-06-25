@@ -6,12 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from '@chakra-ui/react';
 import AppContextProvider from './Context/AppContext';
 import ScoreContxtProvider from './Context/ScoreContext';
-
+import myTheme from './myTheme';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <ChakraProvider>
+  <ChakraProvider theme={myTheme}>
     <AppContextProvider>
       <ScoreContxtProvider>
         <App />

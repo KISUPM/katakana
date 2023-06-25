@@ -10,7 +10,7 @@ function App() {
   const App = useContext(AppContext);
 
   return (
-    <Box w="100vw" h="100vh" background="#1c1c1c" color="white">
+    <Box w="100vw" minH="100vh" background="#1c1c1c" color="white">
       {App.mode === "" &&
         <SelectMode />
       }
