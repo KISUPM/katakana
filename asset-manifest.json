@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/katakana/static/css/main.073c9b0a.css",
-    "main.js": "/katakana/static/js/main.1414ecab.js",
+    "main.js": "/katakana/static/js/main.d85015b0.js",
     "static/js/787.7f6c6669.chunk.js": "/katakana/static/js/787.7f6c6669.chunk.js",
     "index.html": "/katakana/index.html",
     "main.073c9b0a.css.map": "/katakana/static/css/main.073c9b0a.css.map",
-    "main.1414ecab.js.map": "/katakana/static/js/main.1414ecab.js.map",
+    "main.d85015b0.js.map": "/katakana/static/js/main.d85015b0.js.map",
     "787.7f6c6669.chunk.js.map": "/katakana/static/js/787.7f6c6669.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.1414ecab.js"
+    "static/js/main.d85015b0.js"
   ]
 }
