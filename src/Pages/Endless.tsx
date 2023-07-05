@@ -25,8 +25,8 @@ export default function Endless() {
         const question = write[rindex]
         const answer = read[rindex]
 
-        const numChoice = Math.floor(Score.scoreGet / 10) + 1;
-        // const numChoice = 10;
+        // const numChoice = Math.floor(Score.scoreGet / 10) + 1;
+        const numChoice = 10;
         let choice: number[] = [rindex]
 
         let i = 0;
@@ -73,7 +73,7 @@ export default function Endless() {
         Score.checkAnswer(answer) ? setIsCorrect("0,255,0") : setIsCorrect("255,0,0");
         setIsShowAnswer(true)
         setDisableAnswer(true)
-        await sleep(2)
+        await sleep(1.5)
         setDisableAnswer(false)
         setIsShowAnswer(false)
         randomQuestion();
@@ -99,33 +99,37 @@ export default function Endless() {
                         {Score.question}
                     </Heading>
                 </Box>
-
                 {/* Choice */}
-                <Box mt="5rem">
-                    <Grid templateColumns={`repeat(${Score.choice.length <= 5 ? Score.choice.length : 5},1fr)`} w="fit-content" m="auto" gap="5rem">
+                <Box position="relative">
+                    {/* Answer */}
+                    <Box
+                        w="fit-content" textAlign={"center"}
+                        p="2rem" background={`rgba(${isCorrect},0.8)`}
+                        border={`1px solid rgba(${isCorrect})`}
+                        mx="auto" my="0.5rem"
+                        borderRadius={"10px"}
+                        visibility={isShowAnswer ? "visible" : "hidden"}
+                        color="white"
+                        position="absolute"
+                        left="50%"
+                        top="50%"
+                        transform={"translate(-50%,-50%)"}
+                        zIndex={1}
+                    >
+                        The Answer : {" "}
+                        {Score.answer}
+                    </Box>
+                    <Grid templateColumns={`repeat(${Score.choice.length <= 5 ? Score.choice.length : 5},1fr)`} gap="1rem" maxW="100vw" m="auto" mx="0.25rem">
                         {
                             Score.choice.map((i, index) => {
                                 return (
-                                    <Box key={index} display={"flex"} justifyContent={"center"} alignItems={"center"}>
-                                        <Button onClick={() => { chooseAnswer(i) }} colorScheme='blue' isDisabled={disableAnswer}>{i}</Button>
-                                    </Box>
+                                    //<Box key={index} display={"flex"} justifyContent={"center"} alignItems={"center"} w="100%">
+                                    <Button key={index} onClick={() => { chooseAnswer(i) }} colorScheme='blue' isDisabled={disableAnswer} w="100%">{i}</Button>
+                                    //</Box>
                                 )
                             })
                         }
                     </Grid>
-                </Box>
-                {/* Answer */}
-                <Box
-                    w="fit-content" textAlign={"center"}
-                    p="2rem" background={`rgba(${isCorrect},0.2)`}
-                    border={`1px solid rgba(${isCorrect})`}
-                    mx="auto" my="10px"
-                    borderRadius={"10px"}
-                    visibility={isShowAnswer ? "visible" : "hidden"}>
-                    <Text color="white">
-                        The Answer : {" "}
-                        {Score.answer}
-                    </Text>
                 </Box>
             </Box>
         </Box>
