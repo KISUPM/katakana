@@ -25,8 +25,8 @@ export default function Endless() {
         const question = write[rindex]
         const answer = read[rindex]
 
-        // const numChoice = Math.floor(Score.scoreGet / 10) + 1;
-        const numChoice = 10;
+        const numChoice = Math.floor(Score.scoreGet / 10) + 1;
+        // const numChoice = 10;
         let choice: number[] = [rindex]
 
         let i = 0;
